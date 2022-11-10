@@ -1,0 +1,585 @@
+// -----------------------------------------------------------------------------
+// HOMEPAGE
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // SLIDER
+    // -----------------------------------------------------------------------------
+    .homepage-slider{
+        height: 600px;
+
+        .slide-item{
+            height: 600px;
+            background-position: top center !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+
+            .slide-content{
+                max-width: 1100px;
+
+                p{
+                    &:nth-child(1){
+                        font-size: 3em;
+                        font-weight: 900;
+                        color: $secondary-color;
+                    }
+
+                    &:nth-child(2){
+                        font-size: 2.8em;
+                        font-weight: 700;
+                        color: $text-color;
+                    }
+
+                    &:nth-child(3){
+                        font-size: 2em;
+                        font-weight: 500;
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+
+        .slick-arrow{
+            top: calc(50% - 60px);
+        }
+
+        .slick-dots{
+            display: none !important;
+        
+            li{
+                border: 1px solid #ffffff;
+        
+                button{        
+                    &::before{
+                        background: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SERVICES
+    // -----------------------------------------------------------------------------
+    .homepage-services{
+        background: transparent;
+        position: relative;
+        margin-top: -130px;
+
+        .service{
+            text-decoration: none;
+            padding: 40px 35px;
+            text-align: center;
+            background: #ffffff;
+            @include box-shadow(0px, 0px, 50px, 0px, rgba(94, 94, 94, 0.1));
+            position: relative;
+
+            &.three-rows{
+                width: 32%;
+            }
+
+            &.two-rows{
+                width: 48%;
+            }
+
+            img{
+                width: 70px;
+                height: 70px;
+                @include transition;
+            }
+
+            h2{
+                font-size: 1.8em;
+                color: $secondary-color;
+                font-weight: 700;
+                line-height: normal;
+                position: relative;
+                @include transition;
+
+                &::after{
+                    content: "";
+                    width: 50px;
+                    height: 2px;
+                    position: absolute;
+                    top: calc(100% + 15px);
+                    left: calc(50% - 25px);
+                    background: $primary-color;
+                    opacity: 0;
+                    @include transition;
+                }
+            }
+
+            p{
+                @include transition;
+            }
+
+            &::before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: transparent;
+                border: 1px solid $secondary-color;
+                top: 0px;
+                left: 0px;
+                opacity: 0;
+                @include transition;
+            }
+
+            &:hover{
+                &::before{
+                    opacity: 1;
+                }
+
+                img{
+                    @include translate(0px, -10px);
+                }
+
+                h2{
+                    @include translate(0px, -10px);
+
+                    &::after{
+                        opacity: 1;
+                    }
+                }
+
+                p{
+                    @include translate(0px, 10px);
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // WHY CHOOSE US
+    // -----------------------------------------------------------------------------
+    .homepage-why-choose-us{
+        .content{
+            width: calc(100% - 600px);
+
+            p{
+                position: relative;
+
+                &::before{
+                    content: "\f00c";
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 1.2em;
+                    font-weight: 900;
+                    position: absolute;
+                    top: 1px;
+                    left: 0px;
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        .images{
+            width: 500px;
+            position: relative;
+
+            img:first-child{
+                width: 100%;
+                height: auto;
+            }
+
+            img:last-child{
+                width: 90%;
+                height: auto;
+                position: absolute;
+                bottom: -50px;
+                right: 100px;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // CLIENTS
+    // -----------------------------------------------------------------------------
+    .homepage-clients{
+        background: $separator-color;
+
+        img{
+            width: auto;
+            height: 45px;
+            margin-bottom: 35px;
+            @include filter(grayscale(100%));
+            opacity: 0.4;
+            @include transition;
+
+            &:hover{
+                @include filter(none);
+                opacity: 1;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // NEWS & ARTICLES
+    // -----------------------------------------------------------------------------
+    .homepage-blog{
+        .articles{
+            .article{
+                width: 32%;
+                @include box-shadow(0px, 0px, 50px, 0px, rgba(94, 94, 94, 0.1));
+                margin-right: 2%;
+
+                .img-date{
+                    position: relative;
+                    
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    time{
+                        position: absolute;
+                        bottom: 3px;
+                        right: 0px;
+                        background: $secondary-color;
+                        color: #ffffff;
+                        font-size: 1.3em;
+                        font-weight: 300;
+                        line-height: 20px;
+                        opacity: 0.8;
+
+                        i{
+                            font-size: 1.2em;
+                            line-height: 20px;
+                        }
+                    }
+                }
+
+                .content{
+                    a{
+                        text-decoration: none;
+
+                        h4{
+                            font-size: 1.6em;
+                            line-height: 25px;
+                        }
+                    }
+
+                    p{
+                        font-size: 1.4em;
+                    }
+
+                    .link{
+                        width: 100%;
+                        font-size: 1.4em;
+                        font-weight: 700;
+                        display: block;
+                        text-align: right;
+
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                &:nth-child(3n){
+                    margin-right: 0px;
+                }
+            }
+        }
+
+        .view-blog-btn-down{
+            display: none;
+            text-align: center;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // GOOGLE MAPS
+    // -----------------------------------------------------------------------------
+    .homepage-google-maps{
+        width: 100%;
+        height: 500px;
+    }
+
+// -----------------------------------------------------------------------------
+// HOMEPAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    // -----------------------------------------------------------------------------
+    // SLIDER
+    // -----------------------------------------------------------------------------
+    .homepage-slider{
+        .slide-item{
+            @include flip-image;
+
+            .slide-content{
+                @include flip-image;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // WHY CHOOSE US
+    // -----------------------------------------------------------------------------
+    .homepage-why-choose-us{
+        .content{
+            p{
+                &::before{
+                    left: auto;
+                    right: 0px;
+                }
+            }
+        }
+
+        .images{
+            img:last-child{
+                right: auto;
+                left: 100px;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // NEWS & ARTICLES
+    // -----------------------------------------------------------------------------
+    .homepage-blog{
+        .articles{
+            .article{
+                margin-right: 0px;
+                margin-left: 2%;
+
+                .img-date{
+                    time{
+                        font-size: 1.5em;
+                        right: auto;
+                        left: 0px;
+                    }
+                }
+
+                .content{
+                    .link{
+                        text-align: left;
+                    }
+                }
+
+                &:nth-child(3n){
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// HOMEPAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // SLIDER
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1400px){
+        .homepage-slider .slide-item .slide-content{
+            max-width: 950px;
+        }
+    }
+
+    @media only screen and (max-width: 1250px){
+        .homepage-slider .slide-item .slide-content{
+            max-width: 70%;
+        }
+    }
+
+    @media only screen and (max-width: 1100px){
+        .homepage-slider,
+        .homepage-slider .slide-item{
+            height: 450px;
+        }
+
+        .homepage-slider .slide-item::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.03);
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 2;
+        }
+
+        .rtl .homepage-slider .slide-item::before{
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .homepage-slider .slide-item .slide-content{
+            max-width: 100%;
+            padding-bottom: 90px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .homepage-slider .slide-item .slide-content p:nth-child(1),
+        .homepage-slider .slide-item .slide-content p:nth-child(2),
+        .homepage-slider .slide-item .slide-content p:nth-child(3){
+            color: #ffffff;
+        }
+
+        .homepage-slider .slick-arrow{
+            display: none !important;
+        }
+
+        .homepage-slider .slick-dots{
+            display: block !important;
+            bottom: 90px;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SERVICES
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1100px){
+        .homepage-services{
+            margin-top: -75px;
+        }
+
+        .homepage-services .service{
+            padding: 30px 20px;
+        }
+    }
+
+    @media only screen and (max-width: 1000px){
+        .homepage-services .service.three-rows{
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 850px){
+        .homepage-services .service.two-rows{
+            width: 100%;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // WHY CHOOSE US
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1270px){
+        .homepage-why-choose-us .images{
+            width: 400px;
+        }
+
+        .homepage-why-choose-us .images img:last-child{
+            width: 100%;
+            right: 50px;
+        }
+
+        .rtl .homepage-why-choose-us .images img:last-child{
+            right: auto !important;
+            left: 50px !important;
+        }
+
+        .homepage-why-choose-us .content{
+            width: calc(100% - 500px);
+        }
+    }
+
+    @media only screen and (max-width: 1100px){
+        .homepage-why-choose-us .content{
+            width: 100%;
+        }
+
+        .homepage-why-choose-us .images{
+            width: 450px;
+            margin: 50px auto 0px auto;
+        }
+
+        .homepage-why-choose-us .images img:first-child{
+            width: calc(100% - 50px);
+            float: right;
+        }
+
+        .rtl .homepage-why-choose-us .images img:first-child{
+            float: left;
+        }
+
+        .homepage-why-choose-us .images img:last-child{
+            width: calc(100% - 50px);
+        }
+
+        .homepage-why-choose-us .content{
+            margin-top: 0px;
+        }
+    }
+
+    @media only screen and (max-width: 500px){
+        .homepage-why-choose-us .images img:first-child,
+        .rtl .homepage-why-choose-us .images img:first-child{
+            width: 100%;
+            float: none;
+        }
+
+        .homepage-why-choose-us .images img:last-child,
+        .rtl .homepage-why-choose-us .images img:last-child{
+            width: 90%;
+            right: 5% !important;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // CLIENTS
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1250px){
+        .homepage-clients img{
+            height: 40px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // NEWS & ARTICLES
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .homepage-blog .articles .article .img-date time{
+            bottom: 2px;
+        }
+    }
+
+    @media only screen and (max-width: 1050px){
+        .homepage-blog .articles .article{
+            width: 48%;
+            margin-right: 4% !important;
+        }
+
+        .homepage-blog .articles .article:nth-child(2n){
+            margin-right: 0px !important;
+        }
+
+        .rtl .homepage-blog .articles .article{
+            margin-right: 0px !important;
+            margin-left: 4% !important;
+        }
+
+        .rtl .homepage-blog .articles .article:nth-child(2n){
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+        }
+    }
+
+    @media only screen and (max-width: 700px){
+        .homepage-blog .articles .article{
+            width: 100%;
+            margin-right: 0px !important;
+        }
+
+        .rtl .homepage-blog .articles .article{
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+        }
+    }
+
+    @media only screen and (max-width: 550px){
+        .view-blog-btn-up{
+            display: none;
+        }
+
+        .homepage-blog .view-blog-btn-down{
+            display: block;
+        }
+    }

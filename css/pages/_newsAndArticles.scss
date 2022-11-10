@@ -1,0 +1,144 @@
+// -----------------------------------------------------------------------------
+// NEWS & ARTICLES
+// -----------------------------------------------------------------------------
+.news-and-articles{
+    .articles{
+        .article{
+            width: 32%;
+            @include box-shadow(0px, 0px, 50px, 0px, rgba(94, 94, 94, 0.1));
+            margin-right: 2%;
+
+            .img-date{
+                position: relative;
+                
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+
+                time{
+                    position: absolute;
+                    bottom: 3px;
+                    right: 0px;
+                    background: $secondary-color;
+                    color: #ffffff;
+                    font-size: 1.3em;
+                    font-weight: 300;
+                    line-height: 20px;
+                    opacity: 0.8;
+
+                    i{
+                        font-size: 1.2em;
+                        line-height: 20px;
+                    }
+                }
+            }
+
+            .content{
+                a{
+                    text-decoration: none;
+
+                    h4{
+                        font-size: 1.6em;
+                        line-height: 25px;
+                    }
+                }
+
+                p{
+                    font-size: 1.4em;
+                }
+
+                .link{
+                    width: 100%;
+                    font-size: 1.4em;
+                    font-weight: 700;
+                    display: block;
+                    text-align: right;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            &:nth-child(3n){
+                margin-right: 0px;
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// NEWS & ARTICLES (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .news-and-articles{
+        .articles{
+            .article{
+                margin-right: 0px;
+                margin-left: 2%;
+
+                .img-date{
+                    time{
+                        font-size: 1.5em;
+                        right: auto;
+                        left: 0px;
+                    }
+                }
+
+                .content{
+                    .link{
+                        text-align: left;
+                    }
+                }
+
+                &:nth-child(3n){
+                    margin-left: 0px;
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// NEWS & ARTICLES (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1200px){
+    .news-and-articles .articles .article .img-date time{
+        bottom: 2px;
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    .news-and-articles .articles .article{
+        width: 48%;
+        margin-right: 4% !important;
+    }
+
+    .news-and-articles .articles .article:nth-child(2n){
+        margin-right: 0px !important;
+    }
+
+    .rtl .news-and-articles .articles .article{
+        margin-right: 0px !important;
+        margin-left: 4% !important;
+    }
+
+    .rtl .news-and-articles .articles .article:nth-child(2n){
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .news-and-articles .articles .article{
+        width: 100%;
+        margin-right: 0px !important;
+    }
+
+    .rtl .news-and-articles .articles .article{
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+}

@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// SOLUTIONS AND SERVICES SUB CATEGORY
+// -----------------------------------------------------------------------------
+.solution-service-subcategory{
+    .content{
+        width: calc(100% - 500px);
+    }
+
+    .solution-service-subcategory-img{
+        width: 450px;
+        height: auto;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// SOLUTIONS AND SERVICES SUB CATEGORY (RTL)
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// SOLUTIONS AND SERVICES SUB CATEGORY (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1200px){
+    .solution-service-subcategory .solution-service-subcategory-img{
+        width: 400px;
+    }
+
+    .solution-service-subcategory .content{
+        width: calc(100% - 450px);
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    .solution-service-subcategory{
+        text-align: center;
+    }
+
+    .solution-service-subcategory .solution-service-subcategory-img{
+        width: 100%;
+        max-width: 500px;
+        margin: 0px auto 30px auto;
+        @include order(1);
+    }
+
+    .solution-service-subcategory .content{
+        width: 100%;
+        @include order(2);
+    }
+}

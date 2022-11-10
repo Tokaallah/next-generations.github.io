@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// BUTTONS
+// -----------------------------------------------------------------------------
+.btn{
+    width: auto;
+    height: auto;
+    padding: 15px 20px;
+    font-size: 1.4em;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    @include transition;
+
+    &.primary{
+        background: $primary-color;
+        color: #ffffff;
+
+        &:hover{
+            background: $primary-color-hover;
+        }
+    }
+
+    &.secondary{
+        background: $secondary-color;
+        color: #ffffff;
+
+        &:hover{
+            background: $secondary-color-hover;
+        }
+    }
+
+    &.link{
+        color: $secondary-color;
+        padding: 0px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// BUTTONS (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    
+}
+
+// -----------------------------------------------------------------------------
+// BUTTONS (RESPONSIVE)
+// -----------------------------------------------------------------------------

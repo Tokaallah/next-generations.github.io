@@ -1,0 +1,192 @@
+// -----------------------------------------------------------------------------
+// MOBILE NAVIGATION BAR
+// -----------------------------------------------------------------------------
+.mobile-navigation-menu{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 999;
+    @include transition;
+
+    .mobile-nav-overlay{
+        width: 100%;
+        height: inherit;
+        background: $primary-color;
+        opacity: 0;
+        @include transition;
+    }
+
+    .mobile-nav-container{
+        width: 300px;
+        height: inherit;
+        position: fixed;
+        top: 0px;
+        left: -300px;
+        bottom: 0px;
+        background: #ffffff;
+        overflow: auto;
+        @include transition;
+        @include box-shadow(0px, 0px, 10px, 0px, rgba(255,255,255,0.1));
+
+        .mobile-nav-close-btn{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+
+            i{
+                font-size: 1.4em;
+                color: $primary-color;
+                opacity: 0.4;
+                @include transition;
+            }
+
+            &:hover{
+                i{
+                    opacity: 1;
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        .logo{
+            width: auto;
+            height: 45px;
+
+            img{
+                width: auto;
+                height: inherit;
+                margin: auto;
+            }
+        }
+
+        ul{
+            width: 100%;
+
+            li{
+                width: 100%;
+                border-top: 1px solid #e8e8e8;
+
+                a{
+                    width: 100%;
+                    display: block;
+                    padding: 15px;
+                    font-size: 1.4em;
+                    text-decoration: none;
+                    color: $primary-color;
+                    @include transition;
+                    cursor: pointer;
+
+                    &:hover{
+                        background: $primary-color;
+                        color: #ffffff;
+                    }
+
+                    &.active{
+                        background: $secondary-color;
+                        color: #ffffff;
+                    }
+                }
+
+                &.dropdown{
+                    a i{
+                        float: right;
+                        position: relative;
+                        top: 1px;
+                        @include transition;
+                    }
+
+                    .dropdown-menu{
+                        visibility: hidden;
+                        opacity: 0;
+                        max-height: 0px;
+                        @include transition(0.5s, ease-in-out);
+
+                        li{
+                            a{
+                                padding-left: 40px;
+                            }
+                        }
+                    }
+
+                    &.show{
+                        a i{
+                            @include rotate(180deg);
+                        }
+
+                        .dropdown-menu{
+                            visibility: visible;
+                            opacity: 1;
+                            max-height: 1000px;
+                        }                        
+                    }
+                }
+            }
+        }
+    }
+
+    &.show{
+        visibility: visible;
+        opacity: 1;
+
+        .mobile-nav-overlay{
+            opacity: 0.4;
+        }
+
+        .mobile-nav-container{
+            @include translate(300px, 0px);
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// MOBILE NAVIGATION BAR (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .mobile-navigation-menu{
+        .mobile-nav-container{
+            right: -300px;
+            left: auto;
+    
+            .mobile-nav-close-btn{
+                left: 20px;
+                right: auto;
+            }
+    
+            ul{
+                li{
+                    &.dropdown{
+                        a i{
+                            float: left;
+                        }
+    
+                        .dropdown-menu{
+                            li{
+                                a{
+                                    padding-right: 40px;
+                                    padding-left: 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        &.show{
+            .mobile-nav-container{
+                @include translate(-300px, 0px);
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// MOBILE NAVIGATION BAR (RESPONSIVE)
+// -----------------------------------------------------------------------------

@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// GOOGLE MAPS
+// -----------------------------------------------------------------------------
+.google-maps{
+    width: 100%;
+    height: inherit;
+    display: block;
+    position: relative;
+
+    & > div{
+        width: 100%;
+        height: inherit;
+        display: block;
+    }
+
+    .google-maps-inner{
+        height: 0px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        background: transparent;
+        
+        .get-directions{
+            position: absolute;
+            top: 20px;
+            left: 0px;
+        }
+    }
+
+    .gmnoprint{
+        display: none;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// GOOGLE MAPS (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .google-maps{
+        .google-maps-inner{
+            .get-directions{
+                right: 0px;
+                left: auto;
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// GOOGLE MAPS (RESPONSIVE)
+// -----------------------------------------------------------------------------

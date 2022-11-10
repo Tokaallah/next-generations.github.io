@@ -1,0 +1,370 @@
+// -----------------------------------------------------------------------------
+// FOOTER
+// -----------------------------------------------------------------------------
+.footer{
+    background: $separator-color;
+
+    .general-info{
+        width: 320px;
+
+        .logo{
+            width: auto;
+            height: 35px;
+
+            img{
+                width: inherit;
+                height: inherit;
+            }
+        }
+
+        .copyrights{
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .social-media{
+            a{
+                font-size: 1.6em;
+                color: $text-color;
+                opacity: 0.6;
+                @include transition;
+
+                &:hover{
+                    color: $secondary-color;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .about{
+            font-size: 1.3em;
+            line-height: 20px;
+
+            a{
+                color: $secondary-color;
+                text-decoration: none;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .important-links{
+            a{
+                font-size: 1.2em;
+                color: $text-color;
+                font-weight: 300;
+                text-decoration: none;
+                line-height: 20px;
+                @include transition;
+
+                &::after{
+                    content: "|";
+                    margin: 0px 10px;
+                }
+
+                &:hover{
+                    color: $secondary-color;
+                    text-decoration: underline;
+                }
+
+                &:last-child{
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-info{
+        width: 270px;
+
+        .contact-info-row{
+            color: $text-color;
+            text-decoration: none;
+
+            i{
+                width: 20px;
+                height: 20px;
+                font-size: 1.7em;
+                text-align: center;
+                line-height: 20px;
+                opacity: 0.6;
+                @include transition;
+            }
+
+            span{
+                width: calc(100% - 35px);
+                line-height: 20px;
+                font-size: 1.3em;
+                @include transition;
+            }
+
+            &:hover{
+                i{
+                    opacity: 1;
+                }
+
+                span{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .send-us-a-quick-message{
+        width: 380px;
+
+        .send-us-a-quick-message-form{
+            .name, .email{
+                width: 48%;
+                height: 35px;
+                padding: 10px 15px;
+                font-family: $primary-font-family, $secondary-font-family;
+                font-size: 1.3em;
+                font-weight: 500;
+                color: $text-color;
+                background: transparent;
+                border: 1px solid #cccdcd;
+                @include border-radius(0px);
+                outline: none;
+                @include transition;
+                line-height: 35px;
+                @include appearance(none);
+
+                &:focus{
+                    border: 1px solid $primary-color;
+                }
+            }
+
+            .message{
+                width: 100%;
+                height: 100px;
+                padding: 10px 15px;
+                font-family: $primary-font-family, $secondary-font-family;
+                font-size: 1.3em;
+                font-weight: 500;
+                color: $text-color;
+                background: transparent;
+                border: 1px solid #cccdcd;
+                @include border-radius(0px);
+                outline: none;
+                @include transition;
+                line-height: 20px;
+                resize: none;
+                @include appearance(none);
+
+                &:focus{
+                    border: 1px solid $primary-color;
+                }
+            }
+
+            button[type="submit"]{
+                width: 100%;
+                height: auto;
+                padding: 10px 15px;
+                font-family: $primary-font-family, $secondary-font-family;
+                font-size: 1.3em;
+                font-weight: 500;
+                background: $secondary-color;
+                @include border-radius(0px);
+                outline: none;
+                color: #ffffff;
+                border: 0px;
+                cursor: pointer;
+                @include transition;
+
+                &:hover{
+                    background: $secondary-color-hover;
+                }
+            }
+        }
+    }
+
+    .sitemap{
+        width: 140px;
+
+        a{
+            font-size: 1.3em;
+            font-weight: 500;
+            line-height: 35px;
+            color: $text-color;
+            text-decoration: none;
+            @include transition;
+
+            &:hover{
+                color: $secondary-color;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// FOOTER (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .footer{
+        .general-info{
+            .copyrights{
+                font-size: 1.4em;
+                font-weight: 300;
+            }
+    
+            .about{
+                font-size: 1.4em;
+                line-height: 22px;
+            }
+    
+            .important-links{
+                a{
+                    font-size: 1.3em;
+                    line-height: 20px;
+                }
+            }
+        }
+    
+        .contact-info{
+            .contact-info-row{    
+                span{
+                    line-height: 20px;
+                    font-size: 1.4em;
+                }
+
+                &.phone-number,
+                &.mobile-number,
+                &.whatsapp-number{
+                    span{
+                        font-size: 1.6em;
+                    }
+                }
+            }
+        }
+    
+        .send-us-a-quick-message{    
+            .send-us-a-quick-message-form{    
+                .message{
+                    line-height: 25px;
+                }
+            }
+        }
+    
+        .sitemap{
+            a{
+                font-size: 1.4em;
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// FOOTER (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1350px){
+    .footer .general-info,
+    .footer .contact-info,
+    .footer .send-us-a-quick-message,
+    .footer .sitemap{
+        width: 45%;
+        margin-top: 50px;
+    }
+
+    .footer .general-info,
+    .footer .contact-info{
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .footer .general-info,
+    .footer .contact-info,
+    .footer .send-us-a-quick-message,
+    .footer .sitemap{
+        width: 100%;
+    }
+
+    .footer .contact-info{
+        margin-top: 50px;
+    }
+
+    .footer .general-info .logo{
+        margin: auto;
+    }
+
+    .footer .general-info .copyrights{
+        text-align: center;
+        margin: 10px 0px;
+    }
+
+    .footer .general-info .social-media{
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .footer .general-info .about{
+        max-width: 600px;
+        text-align: center;
+        margin: 15px auto;
+    }
+
+    .footer .general-info .important-links{
+        text-align: center;
+    }
+
+    .footer .contact-info h6,
+    .footer .send-us-a-quick-message h6,
+    .footer .sitemap h6{
+        text-align: center;
+    }
+
+    .footer .contact-info h6::after,
+    .footer .send-us-a-quick-message h6::after,
+    .footer .sitemap h6::after{
+        margin: 7px auto 0px auto;
+    }
+
+    .footer .contact-info .contact-info-row{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        text-align: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+    }
+
+    .footer .contact-info .contact-info-row i{
+        margin: 0px auto 7px auto;
+    }
+
+    .footer .contact-info .contact-info-row span{
+        width: 100%;
+    }
+
+    .footer .send-us-a-quick-message .send-us-a-quick-message-form{
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .footer .send-us-a-quick-message .send-us-a-quick-message-form .name,
+    .footer .send-us-a-quick-message .send-us-a-quick-message-form .email{
+        width: 48.5%;
+    }
+
+    .footer .sitemap .links{
+        -ms-flex-line-pack: center;
+        align-content: center;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .footer .send-us-a-quick-message .send-us-a-quick-message-form .name, 
+    .footer .send-us-a-quick-message .send-us-a-quick-message-form .email{
+        width: 100%;
+    }
+}

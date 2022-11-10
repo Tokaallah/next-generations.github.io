@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY
+// -----------------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6{
+    color: $primary-color;
+
+    .breakline{
+        width: 70px;
+        height: 4px;
+        display: inline-block;
+        background: $secondary-color;
+        @include translate(0px, -5px);
+    }
+}
+
+h1{
+    font-size: 2.6em;
+    font-weight: 900;
+    line-height: 40px;
+}
+
+h2{
+    font-size: 2.4em;
+    font-weight: 900;
+    line-height: 40px;
+}
+
+h3{
+    font-size: 2.2em;
+    font-weight: 900;
+    line-height: 35px;
+}
+
+h4, h5{
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+h6{
+    font-size: 1.8em;
+    font-weight: 700;
+
+    &::after{
+        content: "";
+        width: 50px;
+        height: 2px;
+        @extend .display-flex;
+        background: $secondary-color;
+        margin-top: 7px;
+    }
+}
+
+p{
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 25px;
+    color: $text-color;
+}
+
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    
+}
+
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY (RESPONSIVE)
+// -----------------------------------------------------------------------------

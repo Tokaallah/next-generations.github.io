@@ -1,0 +1,224 @@
+// -----------------------------------------------------------------------------
+// CONTACT
+// -----------------------------------------------------------------------------
+.contact-info-send-us-a-message{
+
+    // -----------------------------------------------------------------------------
+    // CONTACT INFO
+    // -----------------------------------------------------------------------------
+    .contact-information{
+        width: 50%;
+
+        h2{
+            width: 100%;
+        }
+
+        a{
+            width: 48%;
+            height: 160px;
+            text-decoration: none;
+            padding: 25px 20px;
+            text-align: center;
+            background: #ffffff;
+            @include box-shadow(0px, 0px, 50px, 0px, rgba(94, 94, 94, 0.07));
+            position: relative;
+            @include transition;
+
+            i{
+                font-size: 3em;
+                color: $primary-color;
+                opacity: 0.4;
+                @include transition;
+            }
+
+            span{
+                font-size: 1.4em;
+                color: $text-color;
+                line-height: 30px;
+            }
+
+            &::before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: transparent;
+                border: 1px solid $secondary-color;
+                top: 0px;
+                left: 0px;
+                opacity: 0;
+                @include transition;
+            }
+
+            &:hover{
+                &::before{
+                    opacity: 1;
+                }
+
+                i{
+                    color: $secondary-color;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SEND US A MESSAGE
+    // -----------------------------------------------------------------------------
+    .send-us-a-message{
+        width: 45%;
+
+        .send-us-a-message-form{
+            .name, .email, .phone, .message-type{
+                width: 48%;
+                height: 40px;
+                padding: 10px 15px;
+                font-family: $primary-font-family, $secondary-font-family;
+                font-size: 1.3em;
+                font-weight: 500;
+                color: $text-color;
+                background: transparent;
+                border: 1px solid #cccdcd;
+                @include border-radius(0px);
+                outline: none;
+                @include transition;
+                line-height: 40px;
+                @include appearance(none);
+
+                &:focus{
+                    border: 1px solid $primary-color;
+                }
+            }
+
+            .message-type + .select2-container{
+                width: 48% !important;
+                height: 40px !important;
+
+                .select2-selection--single .select2-selection__arrow{
+                    height: 40px;
+                }
+            }
+
+            .message{
+                width: 100%;
+                height: 150px;
+                padding: 10px 15px;
+                font-family: $primary-font-family, $secondary-font-family;
+                font-size: 1.3em;
+                font-weight: 500;
+                color: $text-color;
+                background: transparent;
+                border: 1px solid #cccdcd;
+                @include border-radius(0px);
+                outline: none;
+                @include transition;
+                line-height: 20px;
+                resize: none;
+                @include appearance(none);
+
+                &:focus{
+                    border: 1px solid $primary-color;
+                }
+            }
+
+            button[type="submit"]{
+                width: 100%;
+                height: auto;
+                padding: 15px 25px;
+                font-family: $primary-font-family, $secondary-font-family;
+                font-size: 1.5em;
+                font-weight: 500;
+                background: $secondary-color;
+                @include border-radius(0px);
+                outline: none;
+                color: #ffffff;
+                border: 0px;
+                cursor: pointer;
+                @include transition;
+
+                &:hover{
+                    background: $secondary-color-hover;
+                }
+            }
+        }
+    }
+}
+
+.select2-container--open .select2-dropdown--below{
+    @include translate(0px, 0px);
+}
+
+    // -----------------------------------------------------------------------------
+    // GOOGLE MAPS
+    // -----------------------------------------------------------------------------
+    .contact-google-maps{
+        width: 100%;
+        height: 500px;
+    }
+
+// -----------------------------------------------------------------------------
+// CONTACT (RTL)
+// -----------------------------------------------------------------------------
+.contact-info-send-us-a-message{
+
+    // -----------------------------------------------------------------------------
+    // CONTACT INFO
+    // -----------------------------------------------------------------------------
+    .contact-information{
+        a{
+            &.mobile-number, &.phone-number{
+                span{
+                    font-size: 1.8em;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// CONTACT (RESPONSIVE)
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // CONTACT INFO
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1100px){
+        .contact-info-send-us-a-message .contact-information{
+            width: 100%;
+        }
+
+        .contact-info-send-us-a-message .contact-information a{
+            width: 48%;
+        }
+    }
+
+    @media only screen and (max-width: 550px){
+        .contact-info-send-us-a-message .contact-information a{
+            width: 108%;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SEND US A MESSAGE
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1100px){
+        .contact-info-send-us-a-message .send-us-a-message{
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+    }
+
+    @media only screen and (max-width: 600px){
+        .contact-info-send-us-a-message .send-us-a-message .send-us-a-message-form .name, 
+        .contact-info-send-us-a-message .send-us-a-message .send-us-a-message-form .email, 
+        .contact-info-send-us-a-message .send-us-a-message .send-us-a-message-form .phone{
+            width: 100%;
+        }
+
+        .contact-info-send-us-a-message .send-us-a-message .send-us-a-message-form .message-type+.select2-container{
+            width: 100% !important;
+            margin-bottom: 20px;
+        }
+    }

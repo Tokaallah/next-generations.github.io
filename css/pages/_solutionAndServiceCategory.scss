@@ -1,0 +1,135 @@
+// -----------------------------------------------------------------------------
+// SOLUTIONS AND SERVICES
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // INTRO
+    // -----------------------------------------------------------------------------
+    .solution-service-intro{
+        .content{
+            width: calc(100% - 500px);
+
+            .icon-description{
+                .icon{
+                    width: 70px;
+                    height: auto;
+                }
+
+                .description{
+                    width: calc(100% - 100px);
+                }
+            }
+        }
+
+        .solution-service-img{
+            width: 450px;
+            height: auto;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SUB CATEGORIES
+    // -----------------------------------------------------------------------------
+    .solution-service-sub-categories{
+        .sub-categories{
+            ul{
+                li{
+                    width: 32%;
+
+                    &::before{
+                        width: 20px;
+                        content: "\f105";
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 1.7em;
+                        font-weight: 900;
+                        color: $secondary-color;
+                        line-height: 25px;
+                    }
+
+                    a{
+                        width: calc(100% - 30px);
+                        text-decoration: none;
+                        font-size: 1.6em;
+                        color: $text-color;
+                        line-height: 25px;
+                        @include transition;
+
+                        &:hover{
+                            color: $secondary-color;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+// -----------------------------------------------------------------------------
+// SOLUTIONS AND SERVICES (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+
+    // -----------------------------------------------------------------------------
+    // SUB CATEGORIES
+    // -----------------------------------------------------------------------------
+    .solution-service-sub-categories{
+        .sub-categories{
+            ul{
+                li{
+                    &::before{
+                        content: "\f104";
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// SOLUTIONS AND SERVICES (RESPONSIVE)
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // INTRO
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1150px){
+        .solution-service-intro .solution-service-img{
+            display: none;
+        }
+
+        .solution-service-intro .content{
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 700px){
+        .solution-service-intro .content .icon-description .icon{
+            display: none;
+        }
+
+        .solution-service-intro .content .icon-description .description{
+            width: 100%;
+        }
+
+        .solution-service-intro .solution-service-img{
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 30px auto 0px auto;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SUB CATEGORIES
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .solution-service-sub-categories .sub-categories ul li{
+            width: 48%;
+        }
+    }
+
+    @media only screen and (max-width: 850px){
+        .solution-service-sub-categories .sub-categories ul li{
+            width: 100%;
+        }
+    }

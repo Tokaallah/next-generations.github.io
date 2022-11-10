@@ -1,0 +1,252 @@
+// -----------------------------------------------------------------------------
+// ABOUT
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // VIDEO INTRO
+    // -----------------------------------------------------------------------------
+    .video-intro{
+        .video-container{
+            width: 500px;
+            position: relative;
+            cursor: pointer;
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+
+            .play-button{
+                width: 60px;
+                height: 60px;
+                background: $secondary-color-overlay;
+                position: absolute;
+                top: calc(50% - 30px);
+                left: calc(50% - 30px);
+                @include border-radius(50%);
+                text-align: center;
+                @include transition;
+
+                &::before{
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
+                    @include border-radius(50%);
+                    @include animation(pulse 2s infinite);
+                    @include transition;
+                }
+
+                i{
+                    font-size: 2em;
+                    line-height: 60px;
+                    @include translate(2.5px, 1px);
+                    color: #ffffff;
+                    @include transition;
+                }
+            }
+
+            &:hover{
+                .play-button{
+                    background: #ffffff;
+
+                    &::before{
+                        @include animation(pulse-white 2s infinite);
+                    }
+
+                    i{
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+
+        .content{
+            width: calc(100% - 550px);
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // WHY CHOOSE US
+    // -----------------------------------------------------------------------------
+    .why-choose-us{
+        .content{
+            width: calc(100% - 600px);
+
+            p{
+                position: relative;
+
+                &::before{
+                    content: "\f00c";
+                    font-family: "Font Awesome 5 Free";
+                    font-size: 1.2em;
+                    font-weight: 900;
+                    position: absolute;
+                    top: 1px;
+                    left: 0px;
+                    color: $secondary-color;
+                }
+            }
+        }
+
+        .images{
+            width: 500px;
+            position: relative;
+
+            img:first-child{
+                width: 100%;
+                height: auto;
+            }
+
+            img:last-child{
+                width: 90%;
+                height: auto;
+                position: absolute;
+                bottom: -50px;
+                right: 100px;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // VENDORS
+    // -----------------------------------------------------------------------------
+    .vendors{
+        text-align: center;
+
+        .vendor-logos{
+            img{
+                width: auto;
+                height: 60px;
+                margin-bottom: 45px;
+            }
+        }
+    }
+
+// -----------------------------------------------------------------------------
+// ABOUT (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+
+    // -----------------------------------------------------------------------------
+    // WHY CHOOSE US
+    // -----------------------------------------------------------------------------
+    .why-choose-us{
+        .content{
+            p{
+                &::before{
+                    left: auto;
+                    right: 0px;
+                }
+            }
+        }
+
+        .images{
+            img:last-child{
+                right: auto;
+                left: 100px;
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// ABOUT (RESPONSIVE)
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // VIDEO INTRO
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1050px){
+        .video-intro .content{
+            width: 100%;
+            @include order(1);
+        }
+
+        .video-intro .video-container{
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto 0px auto;
+            @include order(2);
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // WHY CHOOSE US
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1270px){
+        .why-choose-us .images{
+            width: 400px;
+        }
+
+        .why-choose-us .images img:last-child{
+            width: 100%;
+            right: 50px;
+        }
+
+        .rtl .why-choose-us .images img:last-child{
+            right: auto !important;
+            left: 50px !important;
+        }
+
+        .why-choose-us .content{
+            width: calc(100% - 500px);
+        }
+    }
+
+    @media only screen and (max-width: 1100px){
+        .why-choose-us .content{
+            width: 100%;
+        }
+
+        .why-choose-us .images{
+            width: 450px;
+            margin: 50px auto 0px auto;
+        }
+
+        .why-choose-us .images img:first-child{
+            width: calc(100% - 50px);
+            float: right;
+        }
+
+        .rtl .why-choose-us .images img:first-child{
+            float: left;
+        }
+
+        .why-choose-us .images img:last-child{
+            width: calc(100% - 50px);
+        }
+
+        .why-choose-us .content{
+            margin-top: 0px;
+        }
+    }
+
+    @media only screen and (max-width: 500px){
+        .why-choose-us .images img:first-child,
+        .rtl .why-choose-us .images img:first-child{
+            width: 100%;
+            float: none;
+        }
+
+        .why-choose-us .images img:last-child,
+        .rtl .why-choose-us .images img:last-child{
+            width: 90%;
+            right: 5% !important;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // CLIENTS
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1250px){
+        .vendors .vendor-logos img{
+            height: 40px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
